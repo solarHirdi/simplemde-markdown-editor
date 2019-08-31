@@ -109,7 +109,9 @@ function createIcon(options, enableTooltips, shortcuts) {
 	}
 
 	el.tabIndex = -1;
-	el.className = options.className;
+	var icon = document.createElement("i");
+	icon.className = options.className;
+	el.appendChild(icon);
 	return el;
 }
 
@@ -1532,7 +1534,7 @@ function isLocalStorageAvailable() {
 		try {
 			localStorage.setItem("smde_localStorage", 1);
 			localStorage.removeItem("smde_localStorage");
-		} catch(e) {
+		} catch (e) {
 			return false;
 		}
 	} else {
